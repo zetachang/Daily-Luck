@@ -8,7 +8,7 @@ var format = function(num)
 };
 var url = "http://mindcity.sina.com.tw/MC_data/west/MC-12horos/day/";
 var map = {
-  "capricorn":["0120", "0218"],
+  "capricorn":["1222", "0119"],
   "pisces":["0219", "0320"],
   "aries":["0321", "0419"],
   "taurus":["0420", "0520"],
@@ -38,6 +38,7 @@ app.get('/',function(req,res){
   var match = "capricorn";
   for(i in map){
     if(date >= map[i][0] && date <= map[i][1]){
+      console.log("Matched ", i);
       match = i;
       break;
     }
