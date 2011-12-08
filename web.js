@@ -18,7 +18,8 @@ var map = {
   "virgo": ["0823", "0922"],
   "libra": ["0923", "1023"],
   "scorpio": ["1024", "1122"],
-  "sagittarius": ["1123", "1221"]
+  "sagittarius": ["1123", "1221"],
+  "aquarius": ["0120", "0218"]
 };
 
 app.get('/',function(req,res){
