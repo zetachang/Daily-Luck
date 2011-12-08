@@ -32,7 +32,7 @@ app.get('/',function(req,res){
     res.send("Oops",404);
     return;
   }
-  var date = format(month) + format(day);
+  var date = month.toString() + day.toString();
   var now = new Date()
   var today = now.getFullYear() + format(now.getMonth()+1) + format(now.getDate());
   var match = "capricorn";
