@@ -28,7 +28,10 @@ app.get('/',function(req,res){
   //console.log(req);
   //console.log("--->", month);
   //console.log("--->", day);
-  if(month === undefined || day === undefined)res.send("Oops",404);
+  if(month === undefined || day === undefined){
+    res.send("Oops",404);
+    return;
+  }
   var date = format(month) + format(day);
   var now = new Date()
   var today = now.getFullYear() + format(now.getMonth()+1) + format(now.getDate());
@@ -39,7 +42,7 @@ app.get('/',function(req,res){
       break;
     }
   }
-  //console.log(url + today + "/" + match + ".shtml\n");
+  console.log(url + today + "/" + match + ".shtml\n");
   jsdom.env({html:url + today + "/" + match + ".shtml",
     done:function(errors,window){
       var content = window.document.getElementsByClassName('lotconts')[0].innerHTML.replace("<br>", "");
